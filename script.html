@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Imprimir PDF</title>
+  <script>
+    window.onload = function() {
+      const urlPDF = 'file:///home/cba/Descargas/Default.pdf';
+
+      fetch(`http://localhost:3000/imprimir-pdf?url=${encodeURIComponent(urlPDF)}`)
+        .then((response) => {
+          if (response.ok) {
+            console.log('PDF enviado al servidor para imprimir');
+          } else {
+            console.error('Error al enviar el PDF al servidor');
+          }
+        })
+        .catch((error) => {
+          console.error('Ocurrió un error en la conexión:', error);
+        });
+    };
+  </script>
+</head>
+<body>
+  <h1>Imprimir PDF al cargar la página</h1>
+  <!-- Contenido de tu página -->
+</body>
+</html>
+
